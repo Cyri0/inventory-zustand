@@ -4,8 +4,8 @@ import Inventory from "./components/Inventory"
 const App = () => {
   return (
     <div>
-      <Inventory/>
       <Character/>
+      <Inventory/>
     </div>
   )
 }

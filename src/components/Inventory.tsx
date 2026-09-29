@@ -4,15 +4,18 @@ import { useOnCharacter } from "../store/useOnCharacter"
 const Inventory = () => {
   const inventory = useInventory((state) => state.inventory)
   const putItemFromInventory = useInventory((state) => state.putItemFromInventory)
-
+  const addToInventory = useInventory((state) => state.addToInventory)
   const useItem = useOnCharacter((state) => state.useItem)
 
   const putItem = (id: string) => {
-    useItem(putItemFromInventory(id))
+    const oldItem = useItem(putItemFromInventory(id))
+    if (oldItem) {
+      addToInventory(oldItem)
+    }
   }
 
   return (
-    <div>
+    <div className="inventory">
         {inventory.map(item => 
         <button onClick={()=>putItem(item.id)} title={item.name}>{item.image}</button>)}
     </div>

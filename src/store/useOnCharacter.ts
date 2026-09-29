@@ -9,10 +9,10 @@ type OnCharacterType = {
     rightHand: ItemType | null,
     leftHand: ItemType | null,
     trinket: ItemType | null,
-    useItem: (item: ItemType) => void
+    useItem: (item: ItemType) => ItemType | null
 }
 
-export const useOnCharacter = create<OnCharacterType>((set) => ({
+export const useOnCharacter = create<OnCharacterType>((set, get) => ({
     body: null,
     head: null,
     leftHand: null,
@@ -20,5 +20,9 @@ export const useOnCharacter = create<OnCharacterType>((set) => ({
     neck: null,
     rightHand: null,
     trinket: null,
-    useItem: (item: ItemType) => (set(() => ({[item.slot]: item})))
+    useItem(item: ItemType){
+        const oldItem = get()[item.slot]
+        set(() => ({[item.slot]: item}))
+        return oldItem
+    } 
 }))
