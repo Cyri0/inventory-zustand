@@ -69,16 +69,13 @@ export const useInventory = create<InventoryType>((set, get) => ({
     inventory: starterItems,
     addToInventory: (item: ItemType) => (set((state) => ({inventory: [...state.inventory, item]}))),
     putItemFromInventory(id) {
-      // megkeresi az elemet
       const item = get().inventory.find((e) => e.id === id)
       
       if(!item){
         throw Error("Nincs ilyen item!")
       }
-      // kitörli az elemet az inventory-ból
       set((state) => ({inventory: state.inventory.filter((e) => e.id !== id)}))
-
-      // visszaadja az elemet
+      
       return item;
     },
 }))
