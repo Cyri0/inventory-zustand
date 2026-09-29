@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { type ItemType } from "../types/ItemType";
+import { type ItemSlots, type ItemType } from "../types/ItemType";
 
 type OnCharacterType = {
     head: ItemType | null,
@@ -9,7 +9,8 @@ type OnCharacterType = {
     rightHand: ItemType | null,
     leftHand: ItemType | null,
     trinket: ItemType | null,
-    useItem: (item: ItemType) => ItemType | null
+    useItem: (item: ItemType) => ItemType | null,
+    removeItem: (slot: ItemSlots) => ItemType
 }
 
 export const useOnCharacter = create<OnCharacterType>((set, get) => ({
@@ -24,5 +25,10 @@ export const useOnCharacter = create<OnCharacterType>((set, get) => ({
         const oldItem = get()[item.slot]
         set(() => ({[item.slot]: item}))
         return oldItem
-    } 
+    },
+    removeItem(slot: ItemSlots){
+        const oldItem = get()[slot]
+        set(() => ({[slot]: null}))
+        return oldItem as ItemType
+    }
 }))
