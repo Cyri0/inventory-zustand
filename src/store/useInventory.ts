@@ -27,7 +27,7 @@ const starterItems: ItemType[] = [
   {
     id: "leather-armor",
     name: "Leather Armor",
-    image: "🛡️",
+    image: "🧥",
     description: "Light armor that does not restrict movement.",
     attack: 1,
     defense: 4,
@@ -47,15 +47,26 @@ const starterItems: ItemType[] = [
     slot: "rightHand",
   },
   {
+    id: "shield",
+    name: "Shield",
+    image: "🛡️",
+    description: "A sturdy shield for reliable protection.",
+    attack: 0,
+    defense: 3,
+    power: 0,
+    knowledge: 1,
+    slot: "leftHand",
+  },
+  {
     id: "ancient-tome",
     name: "Ancient Tome",
     image: "📖",
     description: "A book filled with forgotten knowledge.",
     attack: 0,
-    defense: 0,
-    power: 2,
-    knowledge: 5,
+    power: 1,
+    knowledge: 0,
     slot: "trinket",
+    defense: 0
   },
   {
     id: "leather-boots",

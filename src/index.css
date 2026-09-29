@@ -85,7 +85,7 @@
   overflow-x: scroll;
   margin-top: 50px;
   scrollbar-color: black;
-  
+
   button{
     aspect-ratio: 1 / 1;
     width: 100%;
@@ -97,4 +97,13 @@
     font-size: 3rem;
     cursor: pointer;
   }
+}
+
+.stats{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  font-size: 1.5rem;
+  font-family: Courier New, Courier, monospace;
+  font-weight: bold;
 }

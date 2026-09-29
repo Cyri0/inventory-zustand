@@ -5,9 +5,9 @@ export type ItemType = {
     name: string,
     image: string, // use emoji
     description: string,
-    attack: number,
-    defense: number,
-    power: number,
-    knowledge: number,
+    attack?: number,
+    defense?: number,
+    power?: number,
+    knowledge?: number,
     slot: ItemSlots
 }
