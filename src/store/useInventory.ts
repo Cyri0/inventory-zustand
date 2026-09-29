@@ -57,6 +57,28 @@ const starterItems: ItemType[] = [
     knowledge: 5,
     slot: "trinket",
   },
+  {
+    id: "leather-boots",
+    name: "Leather Boots",
+    image: "🥾",
+    description: "Sturdy boots for your feet.",
+    attack: 0,
+    defense: 2,
+    power: 0,
+    knowledge: 0,
+    slot: "legs",
+  },
+  {
+    id: "water-gun",
+    name: "Water Gun",
+    image: "🔫",
+    description: "A playful water gun for fun and games.",
+    attack: 1,
+    defense: 0,
+    power: 0,
+    knowledge: 0,
+    slot: "rightHand",
+  }
 ]
 
 type InventoryType = {
