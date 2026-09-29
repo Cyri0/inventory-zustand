@@ -8,3 +8,64 @@
   min-height: 100dvh;
   width: 100%;
 }
+
+.character{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 500px;
+
+  >div{
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border: 5px solid black;
+    box-shadow: 5px 5px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+  }
+
+  .head{
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .leftHand{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .rightHand{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .body{
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .legs{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .neck{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    scale: 0.5;
+  }
+
+  .trinket{
+    scale: 0.5;
+  }
+}

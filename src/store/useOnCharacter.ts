@@ -20,5 +20,5 @@ export const useOnCharacter = create<OnCharacterType>((set) => ({
     neck: null,
     rightHand: null,
     trinket: null,
-    useItem: (item: ItemType) => (set((state) => ({})))
+    useItem: (item: ItemType) => (set(() => ({[item.slot]: item})))
 }))
